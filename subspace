@@ -10,6 +10,7 @@ options=(
 "Install and run Node"
 "Log Node"
 "Log Farmer"
+"Wipe Farmer"
 "Delete Node"
 "Exit")
 select opt in "${options[@]}"
@@ -115,6 +116,13 @@ sudo journalctl -n 100 -f -u subspacefarm
 break
 ;;
 
+"Wipe Farmer")
+systemctl stop subspace subspacefarm
+farmer wipe
+subspace purge-chain --chain lamda-2513 -y
+sudo systemctl restart subspacefarm subspace
+break
+;;
 
 "Exit")
 exit
