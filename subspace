@@ -3,14 +3,27 @@
 while true
 do
 
+#Logo
+echo "================================================================="
+echo "███████╗██╗   ██╗██████╗ ███████╗██████╗  █████╗  ██████╗███████╗"
+echo "██╔════╝██║   ██║██╔══██╗██╔════╝██╔══██╗██╔══██╗██╔════╝██╔════╝"
+echo "███████╗██║   ██║██████╔╝███████╗██████╔╝███████║██║     █████╗  "
+echo "╚════██║██║   ██║██╔══██╗╚════██║██╔═══╝ ██╔══██║██║     ██╔══╝  "
+echo "███████║╚██████╔╝██████╔╝███████║██║     ██║  ██║╚██████╗███████╗"
+echo "╚══════╝ ╚═════╝ ╚═════╝ ╚══════╝╚═╝     ╚═╝  ╚═╝ ╚═════╝╚══════╝"
+echo "================================================================="
+echo -e "https://subspace.network/"
+echo "================================================================="
+
 # Menu
 
 PS3='Select an action: '
 options=(
 "Install and run Node"
+"Restart Farmer and Node"
 "Log Node"
 "Log Farmer"
-"Wipe Farmer"
+"Wipe Farmer and Purge-chain"
 "Delete Node"
 "Exit")
 select opt in "${options[@]}"
@@ -79,7 +92,7 @@ ExecStart=$(which farmer) farm \\
 --plot-size=$PLOTSIZE
 Restart=always
 RestartSec=10
-LimitNOFILE=10000
+LimitNOFILE=65535
 [Install]
 WantedBy=multi-user.target
 EOF
@@ -116,10 +129,15 @@ sudo journalctl -n 100 -f -u subspacefarm
 break
 ;;
 
-"Wipe Farmer")
+"Wipe Farmer and Purge-chain")
 systemctl stop subspace subspacefarm
 farmer wipe
 subspace purge-chain --chain lamda-2513 -y
+sudo systemctl restart subspacefarm subspace
+break
+;;
+
+"Restart Farmer and Node")
 sudo systemctl restart subspacefarm subspace
 break
 ;;
