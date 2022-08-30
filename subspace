@@ -50,7 +50,7 @@ echo 'export PLOTSIZE='$PLOTSIZE >> $HOME/.bash_profile
 source ~/.bash_profile
 
 apt install jq
-
+sudo apt update && sudo apt-get install ocl-icd-libopencl1 && sudo apt-get install libgomp1
 mkdir $HOME/subspace; \
 cd $HOME/subspace && \
 wget https://github.com/nazar-pc/subspace/releases/download/snapshot-lamda-2513-3/subspace-farmer-ubuntu-x86_64-snapshot-lamda-2513-3 -O farmer && \
