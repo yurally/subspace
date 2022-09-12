@@ -19,7 +19,7 @@ echo "================================================================="
 
 PS3='Select an action: '
 options=(
-"Install and run Node"
+"Install and run Node(Update)"
 "Restart Farmer and Node"
 "Log Node"
 "Log Farmer"
@@ -33,7 +33,7 @@ do
 case $opt in
 
 
-"Install and run Node")
+"Install and run Node(Update)")
 echo "============================================================"
 echo "Write the name of your node"
 echo "============================================================"
