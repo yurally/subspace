@@ -7,7 +7,7 @@ write-host "Write the name of your node"
 write-host "==========================="
 $nodename=read-host
 write-host "==========================="
-write-host "Write plot size for farmer. For example 100G"
+write-host "Write plot size for farmer. For test 10G"
 write-host "==========================="
 $plotsize=read-host
 write-host "==========================="
