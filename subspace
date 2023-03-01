@@ -45,7 +45,7 @@ echo "============================================================"
 read WALLETADDRESS
 echo 'export WALLETADDRESS='$WALLETADDRESS >> $HOME/.bash_profile
 echo "============================================================"
-echo "Write plot size for farmer(100G maximum)"
+echo "Write plot size for farmer(10G for test)"
 echo "============================================================"
 read PLOTSIZE
 echo 'export PLOTSIZE='$PLOTSIZE >> $HOME/.bash_profile
