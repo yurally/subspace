@@ -20,6 +20,6 @@ mkdir ${disk}:\Subspace\subspace-farmer
 cd ${disk}:\Subspace
 powershell -command "& { iwr https://github.com/subspace/subspace/releases/download/gemini-3c-2023-mar-07/subspace-farmer-windows-x86_64-gemini-3c-2023-mar-07.exe -OutFile subspace-farmer-windows-x86_64-gemini-3c-2023-mar-07.exe }"
 powershell -command "& { iwr https://github.com/subspace/subspace/releases/download/gemini-3c-2023-mar-07/subspace-node-windows-x86_64-gemini-3c-2023-mar-07.exe -OutFile subspace-node-windows-x86_64-gemini-3c-2023-mar-07.exe }"
-Start-Process PowerShell.exe -ArgumentList ".\subspace-node-windows-x86_64-gemini-3c-2023-mar-07.exe --chain gemini-3c --base-path ${disk}:\Subspace\subspace-node --execution wasm --state-pruning archive --dsn-disable-private-ips --no-private-ipv4 --validator --name $nodename"
+Start-Process PowerShell.exe -ArgumentList ".\subspace-node-windows-x86_64-gemini-3c-2023-mar-07.exe --chain gemini-3c --base-path ${disk}:\Subspace\subspace-node --execution wasm --blocks-pruning archive --state-pruning archive --dsn-disable-private-ips --no-private-ipv4 --validator --name $nodename"
 Start-Sleep 20
 Start-Process PowerShell.exe -ArgumentList ".\subspace-farmer-windows-x86_64-gemini-3c-2023-mar-07.exe --base-path ${disk}:\Subspace\subspace-farmer farm  --disable-private-ips --reward-address $walletaddress --plot-size $plotsize"
