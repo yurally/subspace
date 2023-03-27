@@ -19,7 +19,9 @@ echo "================================================================="
 
 PS3='Select an action: '
 options=(
-"Install and run Node(Update)"
+"Сheck CPU version"
+"Install and run Node v2 (Update)"
+"Install and run Node v3 (Update)"
 "Restart Node & Farmer"
 "Log Node & Farmer"
 "Search in Node & Farmer"
@@ -31,17 +33,17 @@ do
 case $opt in
 
 
-"Install and run Node(Update)")
+"Install and run Node v2 (Update)")
 
 apt install jq
 
 mkdir $HOME/subspace; \
 cd $HOME/subspace && \
-wget https://github.com/subspace/subspace-cli/releases/download/v0.1.9-alpha/subspace-cli-ubuntu-x86_64-v0.1.9-alpha -O subspace-cli-ubuntu-x86_64-v0.1.9-alpha && \
-sudo chmod +x subspace-cli-ubuntu-x86_64-v0.1.9-alpha && \
-sudo mv subspace-cli-ubuntu-x86_64-v0.1.9-alpha /usr/local/bin/ && \
+wget https://github.com/subspace/subspace-cli/releases/download/v0.1.11-alpha/subspace-cli-ubuntu-x86_64-v2-v0.1.11-alpha -O subspace-cli && \
+sudo chmod +x subspace-cli && \
+sudo mv subspace-cli /usr/local/bin/ && \
 cd $HOME && \
-/usr/local/bin/subspace-cli-ubuntu-x86_64-v0.1.9-alpha init
+/usr/local/bin/subspace-cli init
 rm -Rvf $HOME/subspace
 
 
@@ -52,7 +54,7 @@ After=network.target
 [Service]
 Type=simple
 User=$USER
-ExecStart=/usr/local/bin/subspace-cli-ubuntu-x86_64-v0.1.9-alpha farm --verbose
+ExecStart=/usr/local/bin/subspace-cli farm --verbose
 Restart=on-failure
 RestartSec=10
 LimitNOFILE=1024000
@@ -68,6 +70,44 @@ sudo systemctl restart subspaced
 break
 ;;
 
+"Install and run Node v3 (Update)")
+
+apt install jq
+
+mkdir $HOME/subspace; \
+cd $HOME/subspace && \
+wget https://github.com/subspace/subspace-cli/releases/download/v0.1.11-alpha/subspace-cli-ubuntu-x86_64-v3-v0.1.11-alpha -O subspace-cli && \
+sudo chmod +x subspace-cli && \
+sudo mv subspace-cli /usr/local/bin/ && \
+cd $HOME && \
+/usr/local/bin/subspace-cli init
+rm -Rvf $HOME/subspace
+
+
+sudo tee <<EOF >/dev/null /etc/systemd/system/subspaced.service
+[Unit]
+Description=Subspace Node
+After=network.target
+[Service]
+Type=simple
+User=$USER
+ExecStart=/usr/local/bin/subspace-cli farm --verbose
+Restart=on-failure
+RestartSec=10
+LimitNOFILE=1024000
+[Install]
+WantedBy=multi-user.target
+EOF
+
+sudo systemctl restart systemd-journald
+sudo systemctl daemon-reload
+sudo systemctl enable subspaced
+sudo systemctl restart subspaced
+
+break
+;;
+
+
 "Delete Node & Farmer")
 
 systemctl stop subspaced
@@ -81,14 +121,14 @@ break
 ;;
 
 "Log Node & Farmer")
-sudo journalctl -n 100 -f -u subspaced --no-hostname
+sudo journalctl -n 20 -f -u subspaced -o cat
 break
 ;;
 
 
 "Wipe Node & Farmer")
 systemctl stop subspaced
-subspace-cli-ubuntu-x86_64-v0.1.9-alpha wipe
+subspace-cli wipe
 sudo systemctl restart subspaced
 break
 ;;
@@ -106,6 +146,20 @@ read KEYWORD
 echo -e "\n\033[32m =========================SEARCH RESULTS========================= \033[0m"
 sudo journalctl -u subspaced -o cat | grep "$KEYWORD"
 echo -e "\n\033[32m ================================================================ \033[0m"
+break
+;;
+
+"Сheck CPU version")
+echo 'BEGIN {
+    while (!/flags/) if (getline < "/proc/cpuinfo" != 1) exit 1
+    if (/lm/&&/cmov/&&/cx8/&&/fpu/&&/fxsr/&&/mmx/&&/syscall/&&/sse2/) level = 1
+    if (level == 1 && /cx16/&&/lahf/&&/popcnt/&&/sse4_1/&&/sse4_2/&&/ssse3/) level = 2
+    if (level == 2 && /avx/&&/avx2/&&/bmi1/&&/bmi2/&&/f16c/&&/fma/&&/abm/&&/movbe/&&/xsave/) level = 3
+    if (level == 3 && /avx512f/&&/avx512bw/&&/avx512cd/&&/avx512dq/&&/avx512vl/) level = 4
+    if (level > 0) { print "CPU supports x86-64-v" level; exit level + 1 }
+    exit 1
+}' | awk -f -
+
 break
 ;;
 
