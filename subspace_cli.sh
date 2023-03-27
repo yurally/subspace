@@ -66,6 +66,9 @@ sudo systemctl restart systemd-journald
 sudo systemctl daemon-reload
 sudo systemctl enable subspaced
 sudo systemctl restart subspaced
+echo -e "\n\033[32m ================================= \033[0m"
+echo -e "\n\033[32m Installation completed \033[0m"
+echo -e "\n\033[32m ================================= \033[0m"
 
 break
 ;;
@@ -103,6 +106,9 @@ sudo systemctl restart systemd-journald
 sudo systemctl daemon-reload
 sudo systemctl enable subspaced
 sudo systemctl restart subspaced
+echo -e "\n\033[32m ================================= \033[0m"
+echo -e "\n\033[32m Installation completed \033[0m"
+echo -e "\n\033[32m ================================= \033[0m"
 
 break
 ;;
@@ -116,6 +122,9 @@ rm /etc/systemd/system/subspaced.service
 rm -r /usr/local/bin/subspace*
 rm -r $HOME/.local/share/subspace*
 rm -r $HOME/.config/subspace*
+echo -e "\n\033[32m ================================= \033[0m"
+echo -e "\n\033[32m Node deletion completed \033[0m"
+echo -e "\n\033[32m ================================= \033[0m"
 
 break
 ;;
@@ -130,11 +139,17 @@ break
 systemctl stop subspaced
 subspace-cli wipe
 sudo systemctl restart subspaced
+echo -e "\n\033[32m ================================= \033[0m"
+echo -e "\n\033[32m Wipe completed \033[0m"
+echo -e "\n\033[32m ================================= \033[0m"
 break
 ;;
 
 "Restart Node & Farmer")
 sudo systemctl restart subspaced
+echo -e "\n\033[32m ================================= \033[0m"
+echo -e "\n\033[32m Restart completed \033[0m"
+echo -e "\n\033[32m ================================= \033[0m"
 break
 ;;
 
