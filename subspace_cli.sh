@@ -32,6 +32,7 @@ case $opt in
 
 
 "Install and run Node(Update)")
+source ~/.bash_profile
 
 apt install jq
 
