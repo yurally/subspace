@@ -97,7 +97,7 @@ sudo systemctl restart subspaced
 break
 ;;
 
-"Search in node logs")
+"Search in Node & Farmer")
 echo "============================================================"
 echo "Enter a keyword or phrase to search"
 echo "============================================================"
