@@ -80,7 +80,7 @@ break
 ;;
 
 "Log Node & Farmer")
-sudo journalctl -n 100 -f -u subspaced
+sudo journalctl -n 100 -f -u subspaced --no-hostname
 break
 ;;
 
