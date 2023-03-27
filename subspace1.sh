@@ -79,7 +79,7 @@ rm -r $HOME/.local/share/subspace*
 break
 ;;
 
-"Log Log Node & Farmer")
+"Log Node & Farmer")
 sudo journalctl -n 100 -f -u subspaced
 break
 ;;
