@@ -75,6 +75,7 @@ systemctl disable subspaced
 rm /etc/systemd/system/subspaced.service
 rm -r /usr/local/bin/subspace*
 rm -r $HOME/.local/share/subspace*
+rm -r $HOME/.config/subspace*
 
 break
 ;;
