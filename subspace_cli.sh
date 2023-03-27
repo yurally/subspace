@@ -130,7 +130,7 @@ break
 ;;
 
 "Log Node & Farmer")
-sudo journalctl -n 20 -f -u subspaced -o cat
+sudo journalctl -n 50 -f -u subspaced -o cat
 break
 ;;
 
@@ -153,7 +153,7 @@ echo -e "\n\033[32m ================================= \033[0m"
 break
 ;;
 
-"Search in Node & Farmer")
+"Search in logs Node & Farmer")
 echo "============================================================"
 echo "Enter a keyword or phrase to search"
 echo "============================================================"
