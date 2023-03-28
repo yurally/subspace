@@ -39,7 +39,7 @@ apt install jq
 
 mkdir $HOME/subspace; \
 cd $HOME/subspace && \
-wget https://github.com/subspace/subspace-cli/releases/download/v0.1.11-alpha/subspace-cli-ubuntu-x86_64-v2-v0.1.11-alpha -O subspace-cli && \
+wget https://github.com/subspace/subspace-cli/releases/download/v0.1.12/subspace-cli-ubuntu-x86_64-v2-v0.1.12 -O subspace-cli && \
 sudo chmod +x subspace-cli && \
 sudo mv subspace-cli /usr/local/bin/ && \
 cd $HOME && \
@@ -79,7 +79,7 @@ apt install jq
 
 mkdir $HOME/subspace; \
 cd $HOME/subspace && \
-wget https://github.com/subspace/subspace-cli/releases/download/v0.1.11-alpha/subspace-cli-ubuntu-x86_64-v3-v0.1.11-alpha -O subspace-cli && \
+wget https://github.com/subspace/subspace-cli/releases/download/v0.1.12/subspace-cli-ubuntu-x86_64-v3-v0.1.12 -O subspace-cli && \
 sudo chmod +x subspace-cli && \
 sudo mv subspace-cli /usr/local/bin/ && \
 cd $HOME && \
