@@ -37,6 +37,8 @@ case $opt in
 
 apt install jq
 
+systemctl stop subspaced
+rm $HOME/.config/subspace-cli/settings.toml
 mkdir $HOME/subspace; \
 cd $HOME/subspace && \
 wget https://github.com/subspace/subspace-cli/releases/download/v0.3.1-alpha/subspace-cli-ubuntu-x86_64-v2-v0.3.1-alpha -O subspace-cli && \
