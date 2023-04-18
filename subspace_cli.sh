@@ -41,7 +41,7 @@ systemctl stop subspaced
 rm $HOME/.config/subspace-cli/settings.toml
 mkdir $HOME/subspace; \
 cd $HOME/subspace && \
-wget https://github.com/subspace/subspace-cli/releases/download/v0.3.1-alpha/subspace-cli-ubuntu-x86_64-v2-v0.3.1-alpha -O subspace-cli && \
+wget https://github.com/subspace/subspace-cli/releases/download/v0.3.2-alpha/subspace-cli-ubuntu-x86_64-v2-v0.3.2-alpha -O subspace-cli && \
 sudo chmod +x subspace-cli && \
 sudo mv subspace-cli /usr/local/bin/ && \
 cd $HOME && \
@@ -81,7 +81,7 @@ apt install jq
 
 mkdir $HOME/subspace; \
 cd $HOME/subspace && \
-wget https://github.com/subspace/subspace-cli/releases/download/v0.3.1-alpha/subspace-cli-ubuntu-x86_64-v3-v0.3.1-alpha -O subspace-cli && \
+wget https://github.com/subspace/subspace-cli/releases/download/v0.3.2-alpha/subspace-cli-ubuntu-x86_64-v3-v0.3.2-alpha -O subspace-cli && \
 sudo chmod +x subspace-cli && \
 sudo mv subspace-cli /usr/local/bin/ && \
 cd $HOME && \
