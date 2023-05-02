@@ -24,7 +24,7 @@ options=(
 "Install and run Node v3 (Update)"
 "Restart Node & Farmer"
 "Log Node & Farmer"
-"Search in Node & Farmer"
+"Search in logs Node & Farmer"
 "Wipe Node & Farmer"
 "Delete Node & Farmer"
 "Exit")
