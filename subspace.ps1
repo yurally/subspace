@@ -18,8 +18,8 @@ mkdir ${disk}:\Subspace
 mkdir ${disk}:\Subspace\subspace-node
 mkdir ${disk}:\Subspace\subspace-farmer
 cd ${disk}:\Subspace
-powershell -command "& { iwr https://github.com/subspace/subspace/releases/download/gemini-3d-2023-apr-25/subspace-farmer-windows-x86_64-v3-gemini-3d-2023-apr-25.exe -OutFile subspace-farmer-windows-x86_64-v3-gemini-3d-2023-apr-25.exe }"
-powershell -command "& { iwr https://github.com/subspace/subspace/releases/download/gemini-3d-2023-apr-25/subspace-node-windows-x86_64-v3-gemini-3d-2023-apr-25.exe -OutFile subspace-node-windows-x86_64-v3-gemini-3d-2023-apr-25.exe }"
-Start-Process PowerShell.exe -ArgumentList ".\subspace-node-windows-x86_64-v3-gemini-3d-2023-apr-25.exe --chain gemini-3d --base-path ${disk}:\Subspace\subspace-node --execution wasm --blocks-pruning archive --state-pruning archive --dsn-disable-private-ips --no-private-ipv4 --validator --name $nodename"
+powershell -command "& { iwr https://github.com/subspace/subspace/releases/download/gemini-3d-2023-may-15/subspace-farmer-windows-x86_64-v3-gemini-3d-2023-may-15.exe -OutFile subspace-farmer-windows-x86_64-v3-gemini-3d-2023-may-15.exe }"
+powershell -command "& { iwr https://github.com/subspace/subspace/releases/download/gemini-3d-2023-may-15/subspace-node-windows-x86_64-v3-gemini-3d-2023-may-15.exe -OutFile subspace-node-windows-x86_64-v3-gemini-3d-2023-may-15.exe }"
+Start-Process PowerShell.exe -ArgumentList ".\subspace-node-windows-x86_64-v3-gemini-3d-2023-may-15.exe --chain gemini-3d --base-path ${disk}:\Subspace\subspace-node --execution wasm --blocks-pruning archive --state-pruning archive --dsn-disable-private-ips --no-private-ipv4 --validator --name $nodename"
 Start-Sleep 20
-Start-Process PowerShell.exe -ArgumentList ".\subspace-farmer-windows-x86_64-v3-gemini-3d-2023-apr-25.exe --base-path ${disk}:\Subspace\subspace-farmer farm  --disable-private-ips --reward-address $walletaddress --plot-size $plotsize"
+Start-Process PowerShell.exe -ArgumentList ".\subspace-farmer-windows-x86_64-v3-gemini-3d-2023-may-15.exe --base-path ${disk}:\Subspace\subspace-farmer farm  --disable-private-ips --reward-address $walletaddress --plot-size $plotsize"
