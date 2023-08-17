@@ -60,7 +60,8 @@ wget https://github.com/subspace/subspace/releases/download/gemini-3f-2023-aug-1
 sudo chmod +x * && \
 sudo mv * /usr/local/bin/ && \
 cd $HOME && \
-rm -Rvf $HOME/subspace
+rm -Rvf $HOME/subspace \
+mkdir $HOME/.local/share/subspace-farmer
 
 sudo tee <<EOF >/dev/null /etc/systemd/system/subspace.service
 [Unit]
@@ -72,9 +73,8 @@ User=$USER
 ExecStart=$(which subspace) \\
 --chain="gemini-3f" \\
 --execution="wasm" \\
---blocks-pruning="archive" \\
+--blocks-pruning="256" \\
 --state-pruning="archive" \\
---dsn-disable-private-ips \\
 --no-private-ipv4 \\
 --validator \\
 --name="$NODENAME"
@@ -92,10 +92,7 @@ After=network.target
 [Service]
 Type=simple
 User=$USER
-ExecStart=$(which farmer) farm \\
---disable-private-ips \\
---reward-address=$WALLETADDRESS \\
---plot-size=$PLOTSIZE
+ExecStart=$(which farmer) --farm path=/root/.local/share/subspace-farmer,size=$PLOTSIZE farm --reward-address=$WALLETADDRESS
 Restart=always
 RestartSec=10
 LimitNOFILE=1024000
