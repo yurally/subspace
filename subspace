@@ -92,7 +92,7 @@ After=network.target
 [Service]
 Type=simple
 User=$USER
-ExecStart=$(which farmer) farm --reward-address=$WALLETADDRESS path=/root/.local/share/subspace-farmer,size=$PLOTSIZE 
+ExecStart=$(which farmer) farm --reward-address=$WALLETADDRESS path=$HOME/.local/share/subspace-farmer,size=$PLOTSIZE 
 Restart=always
 RestartSec=10
 LimitNOFILE=1024000
@@ -134,7 +134,7 @@ break
 
 "Wipe Farmer and Purge-chain")
 systemctl stop subspace subspacefarm
-farmer wipe
+farmer wipe $HOME/.local/share/subspace-farmer
 subspace purge-chain --chain gemini-3f -y
 sudo systemctl restart subspacefarm subspace
 break
