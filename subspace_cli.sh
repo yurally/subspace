@@ -41,7 +41,7 @@ systemctl stop subspaced
 rm $HOME/.config/subspace-cli/settings.toml
 mkdir $HOME/subspace; \
 cd $HOME/subspace && \
-wget https://github.com/subspace/pulsar/releases/download/v0.6.3-alpha/pulsar-ubuntu-x86_64-v2-v0.6.3-alpha -O subspace-cli && \
+wget https://github.com/subspace/pulsar/releases/download/v0.6.4-alpha/pulsar-ubuntu-x86_64-v2-v0.6.4-alpha -O subspace-cli && \
 sudo chmod +x subspace-cli && \
 sudo mv subspace-cli /usr/local/bin/ && \
 cd $HOME && \
@@ -81,7 +81,7 @@ apt install jq
 
 mkdir $HOME/subspace; \
 cd $HOME/subspace && \
-wget https://github.com/subspace/pulsar/releases/download/v0.6.3-alpha/pulsar-ubuntu-x86_64-skylake-v0.6.3-alpha -O subspace-cli && \
+wget https://github.com/subspace/pulsar/releases/download/v0.6.4-alpha/pulsar-ubuntu-x86_64-skylake-v0.6.4-alpha -O subspace-cli && \
 sudo chmod +x subspace-cli && \
 sudo mv subspace-cli /usr/local/bin/ && \
 cd $HOME && \
