@@ -123,7 +123,7 @@ break
 systemctl stop subspaced
 systemctl disable subspaced
 rm /etc/systemd/system/subspaced.service
-rm -r /usr/local/bin/subspace*
+rm -r /usr/local/bin/subspace-cli
 rm -r $HOME/.local/share/pulsar*
 rm -r $HOME/.config/pulsar*
 echo -e "\n\033[32m ================================= \033[0m"
@@ -148,6 +148,9 @@ sudo mv subspace-cli /usr/local/bin/ && \
 cd $HOME && \
 rm -Rvf $HOME/subspace && \
 sudo systemctl restart subspaced
+echo -e "\n\033[32m ================================= \033[0m"
+echo -e "\n\033[32m Update completed \033[0m"
+echo -e "\n\033[32m ================================= \033[0m"
 break
 ;;
 
@@ -161,6 +164,9 @@ sudo mv subspace-cli /usr/local/bin/ && \
 cd $HOME && \
 rm -Rvf $HOME/subspace && \
 sudo systemctl restart subspaced
+echo -e "\n\033[32m ================================= \033[0m"
+echo -e "\n\033[32m Update completed \033[0m"
+echo -e "\n\033[32m ================================= \033[0m"
 break
 ;;
 
