@@ -145,6 +145,7 @@ cd $HOME/subspace && \
 wget https://github.com/subspace/pulsar/releases/download/v0.6.6-alpha/pulsar-ubuntu-x86_64-v2-v0.6.6-alpha -O subspace-cli && \
 sudo chmod +x subspace-cli && \
 sudo mv subspace-cli /usr/local/bin/ && \
+cd $HOME && \
 rm -Rvf $HOME/subspace && \
 sudo systemctl restart subspaced
 break
@@ -157,6 +158,7 @@ cd $HOME/subspace && \
 wget https://github.com/subspace/pulsar/releases/download/v0.6.6-alpha/pulsar-ubuntu-x86_64-skylake-v0.6.6-alpha -O subspace-cli && \
 sudo chmod +x subspace-cli && \
 sudo mv subspace-cli /usr/local/bin/ && \
+cd $HOME && \
 rm -Rvf $HOME/subspace && \
 sudo systemctl restart subspaced
 break
