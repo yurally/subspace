@@ -215,7 +215,7 @@ break
 ;;
 
 "Exit")
-exit 0
+fi
 ;;
 *) echo "invalid option $REPLY";;
 esac
