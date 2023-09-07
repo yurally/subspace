@@ -35,7 +35,7 @@ do
 case $opt in
 
 
-"Install and run Node(Update)")
+"Install and run Node")
 echo "============================================================"
 echo "Write the name of your node"
 echo "============================================================"
