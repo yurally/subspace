@@ -135,6 +135,7 @@ break
 
 "Log Node & Farmer")
 sudo journalctl -n 50 -f -u subspaced -o cat
+
 break
 ;;
 
@@ -151,6 +152,7 @@ sudo systemctl restart subspaced
 echo -e "\n\033[32m ================================= \033[0m"
 echo -e "\n\033[32m Update completed \033[0m"
 echo -e "\n\033[32m ================================= \033[0m"
+
 break
 ;;
 
@@ -167,6 +169,7 @@ sudo systemctl restart subspaced
 echo -e "\n\033[32m ================================= \033[0m"
 echo -e "\n\033[32m Update completed \033[0m"
 echo -e "\n\033[32m ================================= \033[0m"
+
 break
 ;;
 
@@ -178,6 +181,7 @@ sudo systemctl restart subspaced
 echo -e "\n\033[32m ================================= \033[0m"
 echo -e "\n\033[32m Wipe completed \033[0m"
 echo -e "\n\033[32m ================================= \033[0m"
+
 break
 ;;
 
@@ -186,6 +190,7 @@ sudo systemctl restart subspaced
 echo -e "\n\033[32m ================================= \033[0m"
 echo -e "\n\033[32m Restart completed \033[0m"
 echo -e "\n\033[32m ================================= \033[0m"
+
 break
 ;;
 
@@ -197,6 +202,7 @@ read KEYWORD
 echo -e "\n\033[32m =========================SEARCH RESULTS========================= \033[0m"
 sudo journalctl -u subspaced -o cat | grep "$KEYWORD"
 echo -e "\n\033[32m ================================================================ \033[0m"
+
 break
 ;;
 
