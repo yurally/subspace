@@ -221,7 +221,7 @@ break
 ;;
 
 "Exit")
-exit
+exit 8
 ;;
 
 *) echo "invalid option $REPLY";;
