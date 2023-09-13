@@ -125,12 +125,12 @@ break
 ;;
 
 "Log Node")
-sudo journalctl -n 100 -f -u subspace
+sudo journalctl -n 50 -f -u subspace -o cat
 break
 ;;
 
 "Log Farmer")
-sudo journalctl -n 100 -f -u subspacefarm
+sudo journalctl -n 50 -f -u subspacefarm -o cat
 break
 ;;
 
