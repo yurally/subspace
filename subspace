@@ -20,7 +20,7 @@ echo "================================================================="
 PS3='Select an action: '
 options=(
 "Install and run Node"
-"Update 11.09.23"
+"Update 13.09.23"
 "Restart Farmer and Node"
 "Log Node"
 "Log Farmer"
@@ -153,7 +153,7 @@ sudo systemctl restart subspacefarm subspace
 break
 ;;
 
-"Update 11.09.23")
+"Update 13.09.23")
 systemctl stop subspacefarm subspace
 mkdir $HOME/subspace; \
 cd $HOME/subspace && \
