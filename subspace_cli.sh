@@ -22,8 +22,8 @@ options=(
 "Сheck CPU version"
 "Install and run Node v2"
 "Install and run Node v3+"
-"Update v2 06.09.23"
-"Update v3+ 06.09.23"
+"Update v2 14.09.23"
+"Update v3+ 14.09.23"
 "Restart Node & Farmer"
 "Log Node & Farmer"
 "Search in logs Node & Farmer"
@@ -43,7 +43,7 @@ systemctl stop subspaced
 rm $HOME/.config/subspace-cli/settings.toml
 mkdir $HOME/subspace; \
 cd $HOME/subspace && \
-wget https://github.com/subspace/pulsar/releases/download/v0.6.7-alpha/pulsar-ubuntu-x86_64-v2-v0.6.7-alpha -O subspace-cli && \
+wget https://github.com/subspace/pulsar/releases/download/v0.6.8-alpha/pulsar-ubuntu-x86_64-v2-v0.6.8-alpha -O subspace-cli && \
 sudo chmod +x subspace-cli && \
 sudo mv subspace-cli /usr/local/bin/ && \
 cd $HOME && \
@@ -83,7 +83,7 @@ apt install jq
 
 mkdir $HOME/subspace; \
 cd $HOME/subspace && \
-wget https://github.com/subspace/pulsar/releases/download/v0.6.7-alpha/pulsar-ubuntu-x86_64-skylake-v0.6.7-alpha -O subspace-cli && \
+wget https://github.com/subspace/pulsar/releases/download/v0.6.8-alpha/pulsar-ubuntu-x86_64-skylake-v0.6.8-alpha -O subspace-cli && \
 sudo chmod +x subspace-cli && \
 sudo mv subspace-cli /usr/local/bin/ && \
 cd $HOME && \
@@ -139,11 +139,11 @@ sudo journalctl -n 50 -f -u subspaced -o cat
 break
 ;;
 
-"Update v2 06.09.23")
+"Update v2 14.09.23")
 systemctl stop subspaced
 mkdir $HOME/subspace; \
 cd $HOME/subspace && \
-wget https://github.com/subspace/pulsar/releases/download/v0.6.7-alpha/pulsar-ubuntu-x86_64-v2-v0.6.7-alpha -O subspace-cli && \
+wget https://github.com/subspace/pulsar/releases/download/v0.6.8-alpha/pulsar-ubuntu-x86_64-v2-v0.6.8-alpha -O subspace-cli && \
 sudo chmod +x subspace-cli && \
 sudo mv subspace-cli /usr/local/bin/ && \
 cd $HOME && \
@@ -156,11 +156,11 @@ echo -e "\n\033[32m ================================= \033[0m"
 break
 ;;
 
-"Update v3+ 06.09.23")
+"Update v3+ 14.09.23")
 systemctl stop subspaced
 mkdir $HOME/subspace; \
 cd $HOME/subspace && \
-wget https://github.com/subspace/pulsar/releases/download/v0.6.7-alpha/pulsar-ubuntu-x86_64-skylake-v0.6.7-alpha -O subspace-cli && \
+wget https://github.com/subspace/pulsar/releases/download/v0.6.8-alpha/pulsar-ubuntu-x86_64-skylake-v0.6.8-alpha -O subspace-cli && \
 sudo chmod +x subspace-cli && \
 sudo mv subspace-cli /usr/local/bin/ && \
 cd $HOME && \
