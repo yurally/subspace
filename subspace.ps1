@@ -18,8 +18,8 @@ mkdir ${disk}:\Subspace
 mkdir ${disk}:\Subspace\subspace-node
 mkdir ${disk}:\Subspace\subspace-farmer
 cd ${disk}:\Subspace
-powershell -command "& { iwr https://github.com/subspace/subspace/releases/download/gemini-3f-2023-oct-04/subspace-farmer-windows-x86_64-skylake-gemini-3f-2023-oct-04.exe -OutFile subspace-farmer-windows-x86_64-skylake-gemini-3f-2023-oct-04.exe }"
-powershell -command "& { iwr https://github.com/subspace/subspace/releases/download/gemini-3f-2023-oct-04/subspace-node-windows-x86_64-skylake-gemini-3f-2023-oct-04.exe -OutFile subspace-node-windows-x86_64-skylake-gemini-3f-2023-oct-04.exe }"
-Start-Process PowerShell.exe -ArgumentList ".\subspace-node-windows-x86_64-skylake-gemini-3f-2023-oct-04.exe --chain gemini-3f --base-path ${disk}:\Subspace\subspace-node --execution wasm --blocks-pruning 256 --state-pruning archive --no-private-ipv4 --validator --name $nodename"
+powershell -command "& { iwr https://github.com/subspace/subspace/releases/download/gemini-3f-2023-oct-06/subspace-farmer-windows-x86_64-skylake-gemini-3f-2023-oct-06.exe -OutFile subspace-farmer-windows-x86_64-skylake-gemini-3f-2023-oct-06.exe }"
+powershell -command "& { iwr https://github.com/subspace/subspace/releases/download/gemini-3f-2023-oct-06/subspace-node-windows-x86_64-skylake-gemini-3f-2023-oct-06.exe -OutFile subspace-node-windows-x86_64-skylake-gemini-3f-2023-oct-06.exe }"
+Start-Process PowerShell.exe -ArgumentList ".\subspace-node-windows-x86_64-skylake-gemini-3f-2023-oct-06.exe --chain gemini-3f --base-path ${disk}:\Subspace\subspace-node --execution wasm --blocks-pruning 256 --state-pruning archive --no-private-ipv4 --validator --name $nodename"
 Start-Sleep 300
-Start-Process PowerShell.exe -ArgumentList ".\subspace-farmer-windows-x86_64-skylake-gemini-3f-2023-oct-04.exe farm --reward-address $walletaddress path=${disk}:\Subspace\subspace-farmer,size=$plotsize"
+Start-Process PowerShell.exe -ArgumentList ".\subspace-farmer-windows-x86_64-skylake-gemini-3f-2023-oct-06.exe farm --reward-address $walletaddress path=${disk}:\Subspace\subspace-farmer,size=$plotsize"
