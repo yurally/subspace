@@ -43,7 +43,7 @@ systemctl stop subspaced
 rm $HOME/.config/subspace-cli/settings.toml
 mkdir $HOME/subspace; \
 cd $HOME/subspace && \
-wget https://github.com/subspace/pulsar/releases/download/v0.6.13-alpha/pulsar-ubuntu-x86_64-v2-v0.6.13-alpha -O subspace-cli && \
+wget https://github.com/subspace/pulsar/releases/download/v0.6.14-alpha/pulsar-ubuntu-x86_64-v2-v0.6.14-alpha -O subspace-cli && \
 sudo chmod +x subspace-cli && \
 sudo mv subspace-cli /usr/local/bin/ && \
 cd $HOME && \
@@ -83,7 +83,7 @@ apt install jq
 
 mkdir $HOME/subspace; \
 cd $HOME/subspace && \
-wget https://github.com/subspace/pulsar/releases/download/v0.6.13-alpha/pulsar-ubuntu-x86_64-skylake-v0.6.13-alpha -O subspace-cli && \
+wget https://github.com/subspace/pulsar/releases/download/v0.6.14-alpha/pulsar-ubuntu-x86_64-skylake-v0.6.14-alpha -O subspace-cli && \
 sudo chmod +x subspace-cli && \
 sudo mv subspace-cli /usr/local/bin/ && \
 cd $HOME && \
@@ -139,11 +139,11 @@ sudo journalctl -n 50 -f -u subspaced -o cat
 break
 ;;
 
-"Update v2 04.10.23")
+"Update v2 10.10.23")
 systemctl stop subspaced
 mkdir $HOME/subspace; \
 cd $HOME/subspace && \
-wget https://github.com/subspace/pulsar/releases/download/v0.6.13-alpha/pulsar-ubuntu-x86_64-v2-v0.6.13-alpha -O subspace-cli && \
+wget https://github.com/subspace/pulsar/releases/download/v0.6.14-alpha/pulsar-ubuntu-x86_64-v2-v0.6.14-alpha -O subspace-cli && \
 sudo chmod +x subspace-cli && \
 sudo mv subspace-cli /usr/local/bin/ && \
 cd $HOME && \
@@ -156,11 +156,11 @@ echo -e "\n\033[32m ================================= \033[0m"
 break
 ;;
 
-"Update v3+ 04.10.23")
+"Update v3+ 10.10.23")
 systemctl stop subspaced
 mkdir $HOME/subspace; \
 cd $HOME/subspace && \
-wget https://github.com/subspace/pulsar/releases/download/v0.6.13-alpha/pulsar-ubuntu-x86_64-skylake-v0.6.13-alpha -O subspace-cli && \
+wget https://github.com/subspace/pulsar/releases/download/v0.6.14-alpha/pulsar-ubuntu-x86_64-skylake-v0.6.14-alpha -O subspace-cli && \
 sudo chmod +x subspace-cli && \
 sudo mv subspace-cli /usr/local/bin/ && \
 cd $HOME && \
