@@ -165,10 +165,10 @@ User=$USER
 ExecStart=$(which subspace) \\
 --chain="gemini-3g" \\
 --node-key $Public_key \\
---blocks-pruning="256" \
+--blocks-pruning="256" \\
 --state-pruning="archive" \\
---no-private-ipv4 \
---validator \
+--no-private-ipv4 \\
+--validator \\
 --name="$NODENAME" \\
 -- \\
 --domain-id 1 \\
