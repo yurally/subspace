@@ -178,7 +178,7 @@ break
 
 "Wipe Node & Farmer")
 systemctl stop subspaced
-subspace-cli wipe
+pulsar wipe
 sudo systemctl restart subspaced
 echo -e "\n\033[32m ================================= \033[0m"
 echo -e "\n\033[32m Wipe completed \033[0m"
