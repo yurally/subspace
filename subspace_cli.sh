@@ -43,11 +43,11 @@ systemctl stop subspaced
 rm $HOME/.config/subspace-cli/settings.toml
 mkdir $HOME/subspace; \
 cd $HOME/subspace && \
-wget https://github.com/subspace/pulsar/releases/download/v0.7.0-alpha/pulsar-ubuntu-x86_64-v2-v0.7.0-alpha -O subspace-cli && \
-sudo chmod +x subspace-cli && \
-sudo mv subspace-cli /usr/local/bin/ && \
+wget https://github.com/subspace/pulsar/releases/download/v0.7.0-alpha/pulsar-ubuntu-x86_64-v2-v0.7.0-alpha -O pulsar && \
+sudo chmod +x pulsar && \
+sudo mv pulsar /usr/local/bin/ && \
 cd $HOME && \
-/usr/local/bin/subspace-cli init
+/usr/local/bin/pulsar init
 rm -Rvf $HOME/subspace
 
 
@@ -58,7 +58,7 @@ After=network.target
 [Service]
 Type=simple
 User=$USER
-ExecStart=/usr/local/bin/subspace-cli farm --verbose
+ExecStart=/usr/local/bin/pulsar farm --verbose
 Restart=on-failure
 RestartSec=10
 LimitNOFILE=1024000
@@ -83,11 +83,11 @@ apt install jq
 
 mkdir $HOME/subspace; \
 cd $HOME/subspace && \
-wget https://github.com/subspace/pulsar/releases/download/v0.7.0-alpha/pulsar-ubuntu-x86_64-skylake-v0.7.0-alpha -O subspace-cli && \
-sudo chmod +x subspace-cli && \
-sudo mv subspace-cli /usr/local/bin/ && \
+wget https://github.com/subspace/pulsar/releases/download/v0.7.0-alpha/pulsar-ubuntu-x86_64-skylake-v0.7.0-alpha -O pulsar && \
+sudo chmod +x pulsar && \
+sudo mv pulsar /usr/local/bin/ && \
 cd $HOME && \
-/usr/local/bin/subspace-cli init
+/usr/local/bin/pulsar init
 rm -Rvf $HOME/subspace
 
 
@@ -98,7 +98,7 @@ After=network.target
 [Service]
 Type=simple
 User=$USER
-ExecStart=/usr/local/bin/subspace-cli farm --verbose
+ExecStart=/usr/local/bin/pulsar farm --verbose
 Restart=on-failure
 RestartSec=10
 LimitNOFILE=1024000
@@ -123,7 +123,7 @@ break
 systemctl stop subspaced
 systemctl disable subspaced
 rm /etc/systemd/system/subspaced.service
-rm -r /usr/local/bin/subspace-cli
+rm -r /usr/local/bin/pulsar
 rm -r $HOME/.local/share/pulsar*
 rm -r $HOME/.config/pulsar*
 echo -e "\n\033[32m ================================= \033[0m"
@@ -143,9 +143,9 @@ break
 systemctl stop subspaced
 mkdir $HOME/subspace; \
 cd $HOME/subspace && \
-wget https://github.com/subspace/pulsar/releases/download/v0.7.0-alpha/pulsar-ubuntu-x86_64-v2-v0.7.0-alpha -O subspace-cli && \
-sudo chmod +x subspace-cli && \
-sudo mv subspace-cli /usr/local/bin/ && \
+wget https://github.com/subspace/pulsar/releases/download/v0.7.0-alpha/pulsar-ubuntu-x86_64-v2-v0.7.0-alpha -O pulsar && \
+sudo chmod +x pulsar && \
+sudo mv pulsar /usr/local/bin/ && \
 cd $HOME && \
 rm -Rvf $HOME/subspace && \
 sudo systemctl restart subspaced
@@ -160,9 +160,9 @@ break
 systemctl stop subspaced
 mkdir $HOME/subspace; \
 cd $HOME/subspace && \
-wget https://github.com/subspace/pulsar/releases/download/v0.7.0-alpha/pulsar-ubuntu-x86_64-skylake-v0.7.0-alpha -O subspace-cli && \
-sudo chmod +x subspace-cli && \
-sudo mv subspace-cli /usr/local/bin/ && \
+wget https://github.com/subspace/pulsar/releases/download/v0.7.0-alpha/pulsar-ubuntu-x86_64-skylake-v0.7.0-alpha -O pulsar && \
+sudo chmod +x pulsar && \
+sudo mv pulsar /usr/local/bin/ && \
 cd $HOME && \
 rm -Rvf $HOME/subspace && \
 sudo systemctl restart subspaced
