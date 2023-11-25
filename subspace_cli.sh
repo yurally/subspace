@@ -40,7 +40,7 @@ case $opt in
 apt install jq
 
 systemctl stop subspaced
-rm $HOME/.config/subspace-cli/settings.toml
+rm $HOME/.config/pulsar/settings.toml
 mkdir $HOME/subspace; \
 cd $HOME/subspace && \
 wget https://github.com/subspace/pulsar/releases/download/v0.7.0-alpha/pulsar-ubuntu-x86_64-v2-v0.7.0-alpha -O pulsar && \
@@ -81,7 +81,9 @@ break
 
 apt install jq
 
-mkdir $HOME/subspace; \
+systemctl stop subspaced && \
+rm $HOME/.config/pulsar/settings.toml && \
+mkdir $HOME/subspace; && \
 cd $HOME/subspace && \
 wget https://github.com/subspace/pulsar/releases/download/v0.7.0-alpha/pulsar-ubuntu-x86_64-skylake-v0.7.0-alpha -O pulsar && \
 sudo chmod +x pulsar && \
