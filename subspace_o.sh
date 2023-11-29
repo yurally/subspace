@@ -321,8 +321,8 @@ break
 systemctl stop subspacefarm subspace
 mkdir $HOME/subspace; \
 cd $HOME/subspace && \
-wget https://github.com/subspace/subspace/releases/download/gemini-3g-2023-nov-21/subspace-farmer-ubuntu-x86_64-skylake-gemini-3g-2023-nov-21 -O farmer && \
-wget https://github.com/subspace/subspace/releases/download/gemini-3g-2023-nov-21/subspace-node-ubuntu-x86_64-skylake-gemini-3g-2023-nov-21 -O subspace && \
+wget https://github.com/subspace/subspace/releases/download/gemini-3g-2023-nov-29/subspace-farmer-ubuntu-x86_64-skylake-gemini-3g-2023-nov-29 -O farmer && \
+wget https://github.com/subspace/subspace/releases/download/gemini-3g-2023-nov-29/subspace-node-ubuntu-x86_64-skylake-gemini-3g-2023-nov-29 -O subspace && \
 sudo chmod +x * && \
 sudo mv * /usr/local/bin/ && \
 cd $HOME && \
