@@ -22,7 +22,7 @@ options=(
 "Install and run ValidatorNode&Farmer"
 "Install and run Operator Node"
 "Install and run Oper+ValNode&Farmer"
-"Update 21.11.23"
+"Update 29.11.23"
 "Restart Node"
 "Restart Farmer"
 "Log Node"
@@ -317,7 +317,7 @@ sudo systemctl restart subspacefarm
 break
 ;;
 
-"Update 21.11.23")
+"Update 29.11.23")
 systemctl stop subspacefarm subspace
 mkdir $HOME/subspace; \
 cd $HOME/subspace && \
