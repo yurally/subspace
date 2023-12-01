@@ -22,7 +22,7 @@ options=(
 "Install and run ValidatorNode&Farmer"
 "Install and run Operator Node"
 "Install and run Oper+ValNode&Farmer"
-"Update 29.11.23"
+"Update 01.12.23"
 "Restart Node"
 "Restart Farmer"
 "Log Node"
@@ -60,8 +60,8 @@ apt install jq
 
 mkdir $HOME/subspace; \
 cd $HOME/subspace && \
-wget https://github.com/subspace/subspace/releases/download/gemini-3g-2023-nov-21/subspace-farmer-ubuntu-x86_64-skylake-gemini-3g-2023-nov-21 -O farmer && \
-wget https://github.com/subspace/subspace/releases/download/gemini-3g-2023-nov-21/subspace-node-ubuntu-x86_64-skylake-gemini-3g-2023-nov-21 -O subspace && \
+wget https://github.com/subspace/subspace/releases/download/gemini-3g-2023-dec-01/subspace-farmer-ubuntu-x86_64-skylake-gemini-3g-2023-dec-01 -O farmer && \
+wget https://github.com/subspace/subspace/releases/download/gemini-3g-2023-dec-01/subspace-node-ubuntu-x86_64-skylake-gemini-3g-2023-dec-01 -O subspace && \
 sudo chmod +x * && \
 sudo mv * /usr/local/bin/ && \
 cd $HOME && \
@@ -134,8 +134,8 @@ apt install jq
 
 mkdir $HOME/subspace; \
 cd $HOME/subspace && \
-wget https://github.com/subspace/subspace/releases/download/gemini-3g-2023-nov-21/subspace-farmer-ubuntu-x86_64-skylake-gemini-3g-2023-nov-21 -O farmer && \
-wget https://github.com/subspace/subspace/releases/download/gemini-3g-2023-nov-21/subspace-node-ubuntu-x86_64-skylake-gemini-3g-2023-nov-21 -O subspace && \
+wget https://github.com/subspace/subspace/releases/download/gemini-3g-2023-dec-01/subspace-farmer-ubuntu-x86_64-skylake-gemini-3g-2023-dec-01 -O farmer && \
+wget https://github.com/subspace/subspace/releases/download/gemini-3g-2023-dec-01/subspace-node-ubuntu-x86_64-skylake-gemini-3g-2023-dec-01 -O subspace && \
 sudo chmod +x * && \
 sudo mv * /usr/local/bin/ && \
 cd $HOME && \
@@ -172,7 +172,7 @@ ExecStart=$(which subspace) \\
 --name="$NODENAME" \\
 -- \\
 --domain-id 1 \\
---operator \\
+#--operator-id you_id \\
 --keystore-path /root/subspace_operator/keystore \\
 --bootnodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp
 Restart=on-failure
@@ -218,7 +218,7 @@ apt install jq
 
 mkdir $HOME/subspace; \
 cd $HOME/subspace && \
-wget https://github.com/subspace/subspace/releases/download/gemini-3g-2023-nov-21/subspace-node-ubuntu-x86_64-skylake-gemini-3g-2023-nov-21 -O subspace && \
+wget https://github.com/subspace/subspace/releases/download/gemini-3g-2023-dec-01/subspace-node-ubuntu-x86_64-skylake-gemini-3g-2023-dec-01 -O subspace && \
 sudo chmod +x * && \
 sudo mv * /usr/local/bin/ && \
 cd $HOME && \
@@ -252,7 +252,7 @@ ExecStart=$(which subspace) \\
 -- \\
 --domain-id 1 \\
 --chain gemini-3g \\
---operator \\
+#--operator you_id \\
 --bootnodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp \\
 --keystore-path /root/subspace_operator/keystore
 Restart=on-failure
@@ -317,12 +317,12 @@ sudo systemctl restart subspacefarm
 break
 ;;
 
-"Update 29.11.23")
+"Update 01.12.23")
 systemctl stop subspacefarm subspace
 mkdir $HOME/subspace; \
 cd $HOME/subspace && \
-wget https://github.com/subspace/subspace/releases/download/gemini-3g-2023-nov-29/subspace-farmer-ubuntu-x86_64-skylake-gemini-3g-2023-nov-29 -O farmer && \
-wget https://github.com/subspace/subspace/releases/download/gemini-3g-2023-nov-29/subspace-node-ubuntu-x86_64-skylake-gemini-3g-2023-nov-29 -O subspace && \
+wget https://github.com/subspace/subspace/releases/download/gemini-3g-2023-dec-01/subspace-farmer-ubuntu-x86_64-skylake-gemini-3g-2023-dec-01 -O farmer && \
+wget https://github.com/subspace/subspace/releases/download/gemini-3g-2023-dec-01/subspace-node-ubuntu-x86_64-skylake-gemini-3g-2023-dec-01 -O subspace && \
 sudo chmod +x * && \
 sudo mv * /usr/local/bin/ && \
 cd $HOME && \
