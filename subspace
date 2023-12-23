@@ -20,7 +20,7 @@ echo "================================================================="
 PS3='Select an action: '
 options=(
 "Install and run Node"
-"Update 20.12.23"
+"Update 22.12.23"
 "Restart Farmer and Node"
 "Log Node"
 "Log Farmer"
@@ -57,8 +57,8 @@ apt install jq
 
 mkdir $HOME/subspace; \
 cd $HOME/subspace && \
-wget https://github.com/subspace/subspace/releases/download/gemini-3g-2023-dec-20/subspace-farmer-ubuntu-x86_64-skylake-gemini-3g-2023-dec-20 -O farmer  && \
-wget https://github.com/subspace/subspace/releases/download/gemini-3g-2023-dec-20/subspace-node-ubuntu-x86_64-skylake-gemini-3g-2023-dec-20 -O subspace && \
+wget hhttps://github.com/subspace/subspace/releases/download/gemini-3g-2023-dec-22/subspace-farmer-ubuntu-x86_64-skylake-gemini-3g-2023-dec-22 -O farmer  && \
+wget https://github.com/subspace/subspace/releases/download/gemini-3g-2023-dec-22/subspace-node-ubuntu-x86_64-skylake-gemini-3g-2023-dec-22 -O subspace && \
 sudo chmod +x * && \
 sudo mv * /usr/local/bin/ && \
 cd $HOME && \
@@ -152,12 +152,12 @@ sudo systemctl restart subspacefarm subspace
 break
 ;;
 
-"Update 20.12.23")
+"Update 22.12.23")
 systemctl stop subspacefarm subspace
 mkdir $HOME/subspace; \
 cd $HOME/subspace && \
-wget https://github.com/subspace/subspace/releases/download/gemini-3g-2023-dec-20/subspace-farmer-ubuntu-x86_64-skylake-gemini-3g-2023-dec-20 -O farmer && \
-wget https://github.com/subspace/subspace/releases/download/gemini-3g-2023-dec-20/subspace-node-ubuntu-x86_64-skylake-gemini-3g-2023-dec-20 -O subspace && \
+wget https://github.com/subspace/subspace/releases/download/gemini-3g-2023-dec-22/subspace-farmer-ubuntu-x86_64-skylake-gemini-3g-2023-dec-22 -O farmer && \
+wget https://github.com/subspace/subspace/releases/download/gemini-3g-2023-dec-22/subspace-node-ubuntu-x86_64-skylake-gemini-3g-2023-dec-22 -O subspace && \
 sudo chmod +x * && \
 sudo mv * /usr/local/bin/ && \
 cd $HOME && \
