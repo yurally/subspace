@@ -43,7 +43,7 @@ systemctl stop subspaced
 rm $HOME/.config/pulsar/settings.toml
 mkdir $HOME/subspace; \
 cd $HOME/subspace && \
-wget https://github.com/subspace/pulsar/releases/download/v0.7.1-alpha/pulsar-ubuntu-x86_64-v2-v0.7.1-alpha -O pulsar && \
+wget https://github.com/subspace/pulsar/releases/download/v0.7.4-alpha/pulsar-ubuntu-x86_64-v2-v0.7.4-alpha -O pulsar && \
 sudo chmod +x pulsar && \
 sudo mv pulsar /usr/local/bin/ && \
 cd $HOME && \
@@ -85,7 +85,7 @@ systemctl stop subspaced && \
 rm $HOME/.config/pulsar/settings.toml && \
 mkdir $HOME/subspace; && \
 cd $HOME/subspace && \
-wget https://github.com/subspace/pulsar/releases/download/v0.7.1-alpha/pulsar-ubuntu-x86_64-skylake-v0.7.1-alpha -O pulsar && \
+wget https://github.com/subspace/pulsar/releases/download/v0.7.4-alpha/pulsar-ubuntu-x86_64-skylake-v0.7.4-alpha -O pulsar && \
 sudo chmod +x pulsar && \
 sudo mv pulsar /usr/local/bin/ && \
 cd $HOME && \
