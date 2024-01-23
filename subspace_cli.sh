@@ -22,8 +22,8 @@ options=(
 "Сheck CPU version"
 "Install and run Node v2"
 "Install and run Node v3+"
-"Update v2 02.12.23"
-"Update v3+ 02.12.23"
+"Update v2 19.01.24"
+"Update v3+ 19.01.24"
 "Restart Node & Farmer"
 "Log Node & Farmer"
 "Search in logs Node & Farmer"
@@ -141,11 +141,11 @@ sudo journalctl -n 50 -f -u subspaced -o cat
 break
 ;;
 
-"Update v2 02.12.23")
+"Update v2 19.01.24")
 systemctl stop subspaced
 mkdir $HOME/subspace; \
 cd $HOME/subspace && \
-wget https://github.com/subspace/pulsar/releases/download/v0.7.1-alpha/pulsar-ubuntu-x86_64-v2-v0.7.1-alpha -O pulsar && \
+wget https://github.com/subspace/pulsar/releases/download/v0.7.4-alpha/pulsar-ubuntu-x86_64-v2-v0.7.4-alpha -O pulsar && \
 sudo chmod +x pulsar && \
 sudo mv pulsar /usr/local/bin/ && \
 cd $HOME && \
@@ -158,11 +158,11 @@ echo -e "\n\033[32m ================================= \033[0m"
 break
 ;;
 
-"Update v3+ 02.12.23")
+"Update v3+ 19.01.24")
 systemctl stop subspaced
 mkdir $HOME/subspace; \
 cd $HOME/subspace && \
-wget https://github.com/subspace/pulsar/releases/download/v0.7.1-alpha/pulsar-ubuntu-x86_64-skylake-v0.7.1-alpha -O pulsar && \
+wget https://github.com/subspace/pulsar/releases/download/v0.7.4-alpha/pulsar-ubuntu-x86_64-skylake-v0.7.4-alpha -O pulsar && \
 sudo chmod +x pulsar && \
 sudo mv pulsar /usr/local/bin/ && \
 cd $HOME && \
