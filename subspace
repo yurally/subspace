@@ -57,8 +57,8 @@ apt install jq
 
 mkdir $HOME/subspace; \
 cd $HOME/subspace && \
-wget https://github.com/subspace/subspace/releases/download/gemini-3g-2024-jan-31/subspace-farmer-ubuntu-x86_64-skylake-gemini-3g-2024-jan-31 -O farmer  && \
-wget https://github.com/subspace/subspace/releases/download/gemini-3g-2024-jan-31/subspace-node-ubuntu-x86_64-skylake-gemini-3g-2024-jan-31 -O subspace && \
+wget https://github.com/subspace/subspace/releases/download/gemini-3h-2024-jan-31-2/subspace-farmer-ubuntu-x86_64-skylake-gemini-3h-2024-jan-31-2 -O farmer  && \
+wget https://github.com/subspace/subspace/releases/download/gemini-3h-2024-jan-31-2/subspace-node-ubuntu-x86_64-skylake-gemini-3h-2024-jan-31-2 -O subspace && \
 sudo chmod +x * && \
 sudo mv * /usr/local/bin/ && \
 cd $HOME && \
@@ -73,11 +73,11 @@ After=network.target
 Type=simple
 User=$USER
 ExecStart=$(which subspace) \\
---chain="gemini-3g" \\
+--chain="gemini-3h" \\
+--base-path="$HOME/.local/share/subspace-node"
 --blocks-pruning="256" \\
 --state-pruning="archive-canonical" \\
---no-private-ipv4 \\
---validator \\
+--farmer \\
 --name="$NODENAME"
 Restart=on-failure
 RestartSec=10
