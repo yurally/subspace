@@ -74,7 +74,7 @@ Type=simple
 User=$USER
 ExecStart=$(which subspace) \\
 --chain="gemini-3h" \\
---base-path="$HOME/.local/share/subspace-node"
+--base-path="$HOME/.local/share/subspace-node" \\
 --blocks-pruning="256" \\
 --state-pruning="archive-canonical" \\
 --farmer \\
