@@ -72,7 +72,7 @@ After=network.target
 [Service]
 Type=simple
 User=$USER
-ExecStart=$(which subspace) \\
+ExecStart=$(which subspace) run \\
 --chain="gemini-3h" \\
 --base-path="$HOME/.local/share/subspace-node" \\
 --blocks-pruning="256" \\
