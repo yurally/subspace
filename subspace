@@ -73,11 +73,11 @@ After=network.target
 Type=simple
 User=$USER
 ExecStart=$(which subspace) \\
---chain="gemini-3h" \\
---base-path="$HOME/.local/share/subspace-node"
+--chain="gemini-3g" \\
 --blocks-pruning="256" \\
 --state-pruning="archive-canonical" \\
---farmer \\
+--no-private-ipv4 \\
+--validator \\
 --name="$NODENAME"
 Restart=on-failure
 RestartSec=10
