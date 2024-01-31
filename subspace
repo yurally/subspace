@@ -142,7 +142,7 @@ break
 
 "Purge-chain")
 systemctl stop subspace
-subspace purge-chain --chain gemini-3g -y
+subspace wipe $HOME/.local/share/subspace-node
 sudo systemctl restart subspace
 break
 ;;
