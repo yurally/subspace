@@ -77,7 +77,7 @@ ExecStart=$(which subspace) run \\
 --chain="gemini-3h" \\
 --base-path="$HOME/.local/share/subspace-node" \\
 --listen-on /ip4/0.0.0.0/tcp/30334 \\
---keep-blocks="256" \\
+--blocks-pruning="256" \\
 --state-pruning="archive-canonical" \\
 --farmer \\
 --name="$NODENAME"
