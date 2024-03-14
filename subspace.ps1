@@ -18,8 +18,8 @@ mkdir ${disk}:\Subspace
 mkdir ${disk}:\Subspace\subspace-node
 mkdir ${disk}:\Subspace\subspace-farmer
 cd ${disk}:\Subspace
-powershell -command "& { iwr https://github.com/subspace/subspace/releases/download/gemini-3h-2024-mar-11/subspace-farmer-windows-x86_64-skylake-gemini-3h-2024-mar-11.exe -OutFile subspace-farmer-windows-x86_64-skylake-gemini-3h-2024-mar-11.exe }"
-powershell -command "& { iwr https://github.com/subspace/subspace/releases/download/gemini-3h-2024-mar-11/subspace-node-windows-x86_64-skylake-gemini-3h-2024-mar-11.exe -OutFile subspace-node-windows-x86_64-skylake-gemini-3h-2024-mar-11.exe }"
-Start-Process PowerShell.exe -ArgumentList ".\subspace-node-windows-x86_64-skylake-gemini-3h-2024-mar-11.exe run --chain gemini-3h --base-path ${disk}:\Subspace\subspace-node --farmer --name $nodename"
+powershell -command "& { iwr https://github.com/subspace/subspace/releases/download/gemini-3h-2024-mar-14/subspace-farmer-windows-x86_64-skylake-gemini-3h-2024-mar-14.exe -OutFile subspace-farmer-windows-x86_64-skylake-gemini-3h-2024-mar-14.exe }"
+powershell -command "& { iwr https://github.com/subspace/subspace/releases/download/gemini-3h-2024-mar-14/subspace-node-windows-x86_64-skylake-gemini-3h-2024-mar-14.exe -OutFile subspace-node-windows-x86_64-skylake-gemini-3h-2024-mar-14.exe }"
+Start-Process PowerShell.exe -ArgumentList ".\subspace-node-windows-x86_64-skylake-gemini-3h-2024-mar-14.exe run --chain gemini-3h --base-path ${disk}:\Subspace\subspace-node --farmer --name $nodename"
 Start-Sleep 300
-Start-Process PowerShell.exe -ArgumentList ".\subspace-farmer-windows-x86_64-skylake-gemini-3h-2024-mar-11.exe farm --reward-address $walletaddress path=${disk}:\Subspace\subspace-farmer,size=$plotsize"
+Start-Process PowerShell.exe -ArgumentList ".\subspace-farmer-windows-x86_64-skylake-gemini-3h-2024-mar-14.exe farm --reward-address $walletaddress path=${disk}:\Subspace\subspace-farmer,size=$plotsize"
