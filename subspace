@@ -17,7 +17,7 @@ echo -e "https://www.autonomys.xyz/"
 
 PS3='Select an action: '
 options=(
-"Install and run Node"
+"Install and run Node Mainet"
 "Update 06.11.24 - only for Mainet"
 "Restart Farmer and Node"
 "Log Node"
