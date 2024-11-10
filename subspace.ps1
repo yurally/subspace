@@ -1,5 +1,5 @@
 write-host "================================================================================"
-write-host "Enter the letter of the drive where you want to install Subspace. For example D"
+write-host "Enter the letter of the drive where you want to install Autonomys. For example D"
 write-host "================================================================================"
 $disk=read-host
 write-host "==========================="
@@ -14,12 +14,12 @@ write-host "==========================="
 write-host "Enter your wallet address"
 write-host "==========================="
 $walletaddress=read-host
-mkdir ${disk}:\Subspace
-mkdir ${disk}:\Subspace\subspace-node
-mkdir ${disk}:\Subspace\subspace-farmer
-cd ${disk}:\Subspace
-powershell -command "& { iwr https://github.com/autonomys/subspace/releases/download/gemini-3h-2024-sep-03/subspace-farmer-windows-x86_64-skylake-gemini-3h-2024-sep-03.exe -OutFile subspace-farmer-windows-x86_64-skylake-gemini-3h-2024-sep-03.exe }"
-powershell -command "& { iwr https://github.com/autonomys/subspace/releases/download/gemini-3h-2024-sep-03/subspace-node-windows-x86_64-skylake-gemini-3h-2024-sep-03.exe -OutFile subspace-node-windows-x86_64-skylake-gemini-3h-2024-sep-03.exe }"
-Start-Process PowerShell.exe -ArgumentList ".\subspace-node-windows-x86_64-skylake-gemini-3h-2024-sep-03.exe run --chain gemini-3h --base-path ${disk}:\Subspace\subspace-node --farmer --name $nodename"
+mkdir ${disk}:\Autonomys
+mkdir ${disk}:\Autonomys\subspace-node
+mkdir ${disk}:\Autonomys\subspace-farmer
+cd ${disk}:\Autonomys
+powershell -command "& { iwr https://github.com/autonomys/subspace/releases/download/mainnet-2024-nov-06/subspace-farmer-windows-x86_64-skylake-mainnet-2024-nov-06.exe -OutFile subspace-farmer.exe }"
+powershell -command "& { iwr https://github.com/autonomys/subspace/releases/download/gemini-3h-2024-sep-03/subspace-node-windows-x86_64-skylake-gemini-3h-2024-sep-03.exe -OutFile subspace-node.exe }"
+Start-Process PowerShell.exe -ArgumentList ".\subspace-node.exe run --chain mainnet --base-path ${disk}:\Autonomys\subspace-node --farmer --name $nodename"
 Start-Sleep 300
-Start-Process PowerShell.exe -ArgumentList ".\subspace-farmer-windows-x86_64-skylake-gemini-3h-2024-sep-03.exe farm --reward-address $walletaddress path=${disk}:\Subspace\subspace-farmer,size=$plotsize"
+Start-Process PowerShell.exe -ArgumentList ".\subspace-farmer.exe farm --reward-address $walletaddress path=${disk}:\Autonomys\subspace-farmer,size=$plotsize"
