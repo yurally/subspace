@@ -18,7 +18,7 @@ echo -e "https://www.autonomys.xyz/"
 PS3='Select an action: '
 options=(
 "Install and run Node Mainet"
-"Update 06.11.24 - only for Mainet"
+"Update 13.11.24 - only for Mainet"
 "Restart Farmer and Node"
 "Log Node"
 "Log Farmer"
@@ -55,8 +55,8 @@ apt install jq
 
 mkdir $HOME/subspace; \
 cd $HOME/subspace && \
-wget https://github.com/autonomys/subspace/releases/download/mainnet-2024-nov-06/subspace-farmer-ubuntu-x86_64-skylake-mainnet-2024-nov-06 -O farmer  && \
-wget https://github.com/autonomys/subspace/releases/download/mainnet-2024-nov-06/subspace-node-ubuntu-x86_64-skylake-mainnet-2024-nov-06 -O subspace && \
+wget https://github.com/autonomys/subspace/releases/download/mainnet-2024-nov-13/subspace-farmer-ubuntu-x86_64-skylake-mainnet-2024-nov-13 -O farmer  && \
+wget https://github.com/autonomys/subspace/releases/download/mainnet-2024-nov-13/subspace-node-ubuntu-x86_64-skylake-mainnet-2024-nov-13 -O subspace && \
 sudo chmod +x * && \
 sudo mv * /usr/local/bin/ && \
 cd $HOME && \
@@ -150,12 +150,12 @@ sudo systemctl restart subspacefarm subspace
 break
 ;;
 
-"Update 06.11.24 - only for Mainet")
+"Update 13.11.24 - only for Mainet")
 systemctl stop subspacefarm subspace
 mkdir $HOME/subspace; \
 cd $HOME/subspace && \
-wget https://github.com/autonomys/subspace/releases/download/mainnet-2024-nov-06/subspace-farmer-ubuntu-x86_64-skylake-mainnet-2024-nov-06 -O farmer && \
-wget https://github.com/autonomys/subspace/releases/download/mainnet-2024-nov-06/subspace-node-ubuntu-x86_64-skylake-mainnet-2024-nov-06 -O subspace && \
+wget https://github.com/autonomys/subspace/releases/download/mainnet-2024-nov-13/subspace-farmer-ubuntu-x86_64-skylake-mainnet-2024-nov-13 -O farmer && \
+wget https://github.com/autonomys/subspace/releases/download/mainnet-2024-nov-13/subspace-node-ubuntu-x86_64-skylake-mainnet-2024-nov-13 -O subspace && \
 sudo chmod +x * && \
 sudo mv * /usr/local/bin/ && \
 cd $HOME && \
