@@ -33,7 +33,7 @@ do
 case $opt in
 
 
-"Install and run Node Mainet")
+"Install and run Node Mainnet")
 echo "============================================================"
 echo "Write the name of your node"
 echo "============================================================"
