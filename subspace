@@ -17,8 +17,8 @@ echo -e "https://www.autonomys.xyz/"
 
 PS3='Select an action: '
 options=(
-"Install and run Node Mainet"
-"Update 18.11.24 - only for Mainet"
+"Install and run Node Mainnet"
+"Update 18.11.24 - only for Mainnet"
 "Restart Farmer and Node"
 "Log Node"
 "Log Farmer"
@@ -150,7 +150,7 @@ sudo systemctl restart subspacefarm subspace
 break
 ;;
 
-"Update 18.11.24 - only for Mainet")
+"Update 18.11.24 - only for Mainnet")
 systemctl stop subspacefarm subspace
 mkdir $HOME/subspace; \
 cd $HOME/subspace && \
